@@ -36,3 +36,6 @@ print(model(input_video))  # Decoded string
 print(model.encode(input_video))  # Encoded video sequence: [64, 768]
 ```
 
+## 完整的 demonstration
+请执行 ``demo/demo_vsr.py``，加载一个视频片段，用来完整地进行一次 VSR 实验。
+

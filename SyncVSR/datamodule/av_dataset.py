@@ -40,7 +40,7 @@ class AVDataset(torch.utils.data.Dataset):
             torchvision.transforms.Normalize(0.421, 0.165),
         )
 
-        self.length = np.load("./datamodule/video_length.npy")
+        self.length = np.load("./SyncVSR/datamodule/video_length.npy")
         self.length_distribution = np.bincount(self.length)
         self.cut = self.length.max()
         self.tokenizer = TextTransform(
