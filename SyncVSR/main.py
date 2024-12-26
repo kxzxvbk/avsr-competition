@@ -4,13 +4,14 @@ import os
 import sys
 
 import torch
-from omegaconf import DictConfig, OmegaConf
-from datamodule.data_module import DataModule
-from lightning import ModelModule
 from pytorch_lightning import seed_everything, Trainer
 from pytorch_lightning.callbacks import LearningRateMonitor, ModelCheckpoint
 from pytorch_lightning.loggers import WandbLogger
-from utils import check_availability
+
+from omegaconf import DictConfig, OmegaConf
+from .datamodule.data_module import DataModule
+from .lightning import ModelModule
+from .utils import check_availability
 
 # Set environment variables and logger level
 os.environ["WANDB_SILENT"] = "true"

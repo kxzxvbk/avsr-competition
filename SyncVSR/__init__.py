@@ -1,1 +1,1 @@
-from syncasr_model import create_model
+from .syncasr_model import create_model
