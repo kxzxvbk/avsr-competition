@@ -27,7 +27,8 @@ from SyncVSR import create_model
 import torch
 
 model = create_model(pretrained_path='./Vox+LRS2+LRS3.ckpt')
-input_video = torch.randn((2, 64, 3, 96, 96))
-print(model(input_video).shape)  # (2, 64, EMBEDDING_SIZE)
+input_video = torch.randn((64, 1, 96, 96))  # 64 frames of 1-channel 96*96 video.
+print(model(input_video))  # Decoded string
+print(model.encode(input_video))  # Encoded video sequence: [64, 768]
 ```
 
