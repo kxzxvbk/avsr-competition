@@ -30,6 +30,6 @@ if __name__ == "__main__":
     video = load_and_preprocess_data(video_path='demo/example.mp4', img_transform=transform)
     video = video[:32, ...]  # 节省内存，仅取前32帧来预测
 
-    print(f"The video tensor's shape is: {video.shape}")
-    print(f"VSR result: {model(video)}")
-    print(f"Embedding shape: {model.encode(video).shape}")
+    print(f"The video tensor's shape is: {video.shape}")  # torch.Size([32, 1, 96, 96])
+    print(f"VSR result: {model(video)}")  # "ALLOW EVERYONE"
+    print(f"Embedding shape: {model.encode(video).shape}")  # torch.Size([32, 768])
