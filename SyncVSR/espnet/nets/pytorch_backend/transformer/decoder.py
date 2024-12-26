@@ -19,8 +19,8 @@ from SyncVSR.espnet.nets.pytorch_backend.transformer.mask import subsequent_mask
 from SyncVSR.espnet.nets.pytorch_backend.transformer.positionwise_feed_forward import (
     PositionwiseFeedForward,  # noqa: H301
 )
-from espnet.nets.pytorch_backend.transformer.repeat import repeat
-from espnet.nets.scorer_interface import BatchScorerInterface
+from SyncVSR.espnet.nets.pytorch_backend.transformer.repeat import repeat
+from SyncVSR.espnet.nets.scorer_interface import BatchScorerInterface
 
 
 def _pre_hook(
