@@ -11,7 +11,7 @@ from pydub import AudioSegment
 from ultralytics import YOLO
 from turbojpeg import TurboJPEG, TJPF_GRAY, TJSAMP_GRAY, TJFLAG_PROGRESSIVE
 
-from utils import retrieve_txt
+from SyncVSR.preprocess.utils import retrieve_txt
 
 # constants
 MODEL_PATH = "./yolov8n-face.pt" # https://github.com/akanametov/yolo-face?tab=readme-ov-file#trained-models

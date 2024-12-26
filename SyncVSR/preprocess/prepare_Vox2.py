@@ -9,7 +9,7 @@ from torch.utils.data import Dataset, DataLoader
 from turbojpeg import TurboJPEG, TJPF_GRAY, TJSAMP_GRAY, TJFLAG_PROGRESSIVE
 from pydub import AudioSegment
 
-from utils import retrieve_txt
+from SyncVSR.preprocess.utils import retrieve_txt
 
 # get number of cpus
 jpeg = TurboJPEG()

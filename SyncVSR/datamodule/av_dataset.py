@@ -44,8 +44,8 @@ class AVDataset(torch.utils.data.Dataset):
         self.length_distribution = np.bincount(self.length)
         self.cut = self.length.max()
         self.tokenizer = TextTransform(
-            sp_model_path="./spm/unigram/unigram5000.model",
-            dict_path="./spm/unigram/unigram5000_units.txt",
+            sp_model_path="./SyncVSR/spm/unigram/unigram5000.model",
+            dict_path="./SyncVSR/spm/unigram/unigram5000_units.txt",
         )
         self.video_max_length = self.length.max()
         self.language = language
@@ -56,7 +56,6 @@ class AVDataset(torch.utils.data.Dataset):
         # multiple for video-audio alignment
         self.audio_multiple = 40
         print(f"using {self.language} with {self.cut} cut")
-
 
     def __getitem__(self, idx):
         filename = self.filenames[idx]

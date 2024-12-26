@@ -11,7 +11,7 @@ import torch
 import whisperx
 from pydub import AudioSegment
 
-from utils import pydub_to_np
+from SyncVSR.preprocess.utils import pydub_to_np
 
 default_asr_options =  {
     "beam_size": 5,

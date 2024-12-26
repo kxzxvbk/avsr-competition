@@ -2,6 +2,7 @@ import numpy as np
 from typing import Tuple
 import pydub
 
+
 def retrieve_txt(path):
     # replace .mp4 with .txt
     path = path.replace(".mp4", ".txt")
@@ -9,6 +10,7 @@ def retrieve_txt(path):
     with open(path, "r") as f:
         text = f.read()
     return text
+
 
 def pydub_to_np(audio: pydub.AudioSegment) -> Tuple[np.ndarray, int]:
     """
