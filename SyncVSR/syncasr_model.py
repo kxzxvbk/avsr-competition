@@ -3,8 +3,6 @@ from .lightning import ModelModule
 
 
 def create_model(pretrained_path='./Vox+LRS2+LRS3.ckpt', cfg=OmegaConf.load('SyncVSR/config/lrs2.yaml')):
-    model_module = ModelModule(cfg)
-    if cfg.trainer.resume_from_checkpoint and cfg.train:
-        model_module = model_module.load_from_checkpoint(pretrained_path, cfg=cfg)
-        print("Loaded checkpoint from", cfg.trainer.resume_from_checkpoint)
+    cfg.ckpt_path = pretrained_path
+    model_module = ModelModule.load_from_checkpoint(pretrained_path, cfg=cfg, strict=False)
     return model_module

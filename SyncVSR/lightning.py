@@ -74,16 +74,17 @@ class ModelModule(LightningModule):
                     print(f"Frontend Model loaded from {self.cfg.ckpt_path} for {self.cfg.data.language.lower()} language")
 
             else:
-                new_state_dict = {}
+                new_state_dict = self.state_dict()
+
                 for k, v in ckpt["state_dict"].items():
-                    if k.startswith("model.decoder") or k.startswith("wav2vec") or k.startswith("category_classifier") or k.startswith("cutmix"):
+                    if k.startswith("model.decoder") or k.startswith("wav2vec") or k.startswith(
+                            "category_classifier") or k.startswith("cutmix"):
                         pass
-                    elif k.startswith("audio_projection"):
-                        k = k.replace("audio_projection", "audio_classifier")
-                        new_state_dict[k] = v
                     else:
+                        if k not in new_state_dict:
+                            continue
                         new_state_dict[k] = v
-                self.model.load_state_dict(new_state_dict, strict=False)
+                self.load_state_dict(new_state_dict, strict=True)
                 print(f"Encoder Model loaded from {self.cfg.ckpt_path} for {self.cfg.data.language.lower()} language")
 
     def configure_optimizers(self) -> tuple[list[Optimizer], list[dict[str, Any]]]:

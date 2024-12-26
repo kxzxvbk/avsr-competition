@@ -19,7 +19,7 @@ def load_and_preprocess_data(video_path, img_transform):
 
 
 if __name__ == "__main__":
-    model = create_model().cuda()
+    model = create_model(pretrained_path='./Vox+LRS2+LRS3.ckpt').cuda().eval()
 
     # 对数据进行加载和预处理
     transform = torch.nn.Sequential(
@@ -28,7 +28,7 @@ if __name__ == "__main__":
         torchvision.transforms.Normalize(0.421, 0.165),
     )
     video = load_and_preprocess_data(video_path='demo/example.mp4', img_transform=transform)
-    video = video[:128, ...]  # 节省内存，仅取前128帧来预测
+    video = video[:32, ...]  # 节省内存，仅取前32帧来预测
 
     print(f"The video tensor's shape is: {video.shape}")
     print(f"VSR result: {model(video)}")
