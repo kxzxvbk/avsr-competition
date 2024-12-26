@@ -11,26 +11,26 @@ from distutils.util import strtobool
 import numpy
 import torch
 
-from espnet.nets.ctc_prefix_score import CTCPrefixScore
-from espnet.nets.e2e_asr_common import end_detect, ErrorCalculator
-from espnet.nets.pytorch_backend.ctc import CTC
-from espnet.nets.pytorch_backend.nets_utils import (
+from SyncVSR.espnet.nets.ctc_prefix_score import CTCPrefixScore
+from SyncVSR.espnet.nets.e2e_asr_common import end_detect, ErrorCalculator
+from SyncVSR.espnet.nets.pytorch_backend.ctc import CTC
+from SyncVSR.espnet.nets.pytorch_backend.nets_utils import (
     get_subsample,
     make_non_pad_mask,
     th_accuracy,
 )
-from espnet.nets.pytorch_backend.transformer.add_sos_eos import add_sos_eos
-from espnet.nets.pytorch_backend.transformer.attention import (
+from SyncVSR.espnet.nets.pytorch_backend.transformer.add_sos_eos import add_sos_eos
+from SyncVSR.espnet.nets.pytorch_backend.transformer.attention import (
     MultiHeadedAttention,  # noqa: H301
     RelPositionMultiHeadedAttention,  # noqa: H301
 )
-from espnet.nets.pytorch_backend.transformer.decoder import Decoder
-from espnet.nets.pytorch_backend.transformer.encoder import Encoder
-from espnet.nets.pytorch_backend.transformer.label_smoothing_loss import (
+from SyncVSR.espnet.nets.pytorch_backend.transformer.decoder import Decoder
+from SyncVSR.espnet.nets.pytorch_backend.transformer.encoder import Encoder
+from SyncVSR.espnet.nets.pytorch_backend.transformer.label_smoothing_loss import (
     LabelSmoothingLoss,  # noqa: H301
 )
-from espnet.nets.pytorch_backend.transformer.mask import target_mask
-from espnet.nets.scorers.ctc import CTCPrefixScorer
+from SyncVSR.espnet.nets.pytorch_backend.transformer.mask import target_mask
+from SyncVSR.espnet.nets.scorers.ctc import CTCPrefixScorer
 
 from utils import check_availability
 import torch.nn as nn

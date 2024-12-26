@@ -2,9 +2,9 @@
 
 import argparse
 
-from espnet.nets.scorer_interface import ScorerInterface
-from espnet.utils.dynamic_import import dynamic_import
-from espnet.utils.fill_missing_args import fill_missing_args
+from SyncVSR.espnet.nets.scorer_interface import ScorerInterface
+from SyncVSR.espnet.utils.dynamic_import import dynamic_import
+from SyncVSR.espnet.utils.fill_missing_args import fill_missing_args
 
 
 class LMInterface(ScorerInterface):

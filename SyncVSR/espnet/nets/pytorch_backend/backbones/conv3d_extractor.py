@@ -6,8 +6,8 @@
 
 import torch
 import torch.nn as nn
-from espnet.nets.pytorch_backend.backbones.modules.resnet import BasicBlock, ResNet
-from espnet.nets.pytorch_backend.transformer.convolution import Swish
+from SyncVSR.espnet.nets.pytorch_backend.backbones.modules.resnet import BasicBlock, ResNet
+from SyncVSR.espnet.nets.pytorch_backend.transformer.convolution import Swish
 
 
 def threeD_to_2D_tensor(x):
