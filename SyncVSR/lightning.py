@@ -28,8 +28,8 @@ class ModelModule(LightningModule):
         self.cfg = cfg
         self.backbone_args = self.cfg.model.visual_backbone
         self.text_transform = TextTransform(
-            sp_model_path="./spm/unigram/unigram5000.model",
-            dict_path="./spm/unigram/unigram5000_units.txt",
+            sp_model_path="SyncVSR/spm/unigram/unigram5000.model",
+            dict_path="SyncVSR/spm/unigram/unigram5000_units.txt",
         )
         self.token_list = self.text_transform.token_list
         self.model = E2E(len(self.token_list), self.backbone_args)

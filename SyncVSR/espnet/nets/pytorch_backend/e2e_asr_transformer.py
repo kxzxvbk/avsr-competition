@@ -32,7 +32,7 @@ from SyncVSR.espnet.nets.pytorch_backend.transformer.label_smoothing_loss import
 from SyncVSR.espnet.nets.pytorch_backend.transformer.mask import target_mask
 from SyncVSR.espnet.nets.scorers.ctc import CTCPrefixScorer
 
-from utils import check_availability
+from SyncVSR.utils import check_availability
 import torch.nn as nn
 import torch.nn.functional as F
 from transformers import Wav2Vec2ForPreTraining
