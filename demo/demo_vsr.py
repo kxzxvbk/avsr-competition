@@ -32,4 +32,4 @@ if __name__ == "__main__":
 
     print(f"The video tensor's shape is: {video.shape}")
     print(f"VSR result: {model(video)}")
-    print(f"Embedding shape: {model.encode(video)}")
+    print(f"Embedding shape: {model.encode(video).shape}")
