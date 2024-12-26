@@ -1415,9 +1415,3 @@ formatted_*
 *.puml.svg
 default*
 events.*
-
-# FL-framework special key
-logging/
-model_checkpoints/
-results.npz
-data/
