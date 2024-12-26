@@ -10,38 +10,38 @@ import timm
 import torch
 import torch.nn as nn
 
-from espnet.nets.pytorch_backend.backbones.conv1d_extractor import Conv1dResNet
-from espnet.nets.pytorch_backend.backbones.conv3d_extractor import Conv3dResNet
+from SyncVSR.espnet.nets.pytorch_backend.backbones.conv1d_extractor import Conv1dResNet
+from SyncVSR.espnet.nets.pytorch_backend.backbones.conv3d_extractor import Conv3dResNet
 
-from espnet.nets.pytorch_backend.nets_utils import rename_state_dict
+from SyncVSR.espnet.nets.pytorch_backend.nets_utils import rename_state_dict
 
 # from espnet.nets.pytorch_backend.transducer.vgg import VGG2L
-from espnet.nets.pytorch_backend.transformer.attention import (
+from SyncVSR.espnet.nets.pytorch_backend.transformer.attention import (
     LegacyRelPositionMultiHeadedAttention,  # noqa: H301
     MultiHeadedAttention,  # noqa: H301
     RelPositionMultiHeadedAttention,  # noqa: H301
 )
-from espnet.nets.pytorch_backend.transformer.convolution import ConvolutionModule
-from espnet.nets.pytorch_backend.transformer.embedding import (
+from SyncVSR.espnet.nets.pytorch_backend.transformer.convolution import ConvolutionModule
+from SyncVSR.espnet.nets.pytorch_backend.transformer.embedding import (
     LegacyRelPositionalEncoding,  # noqa: H301
     PositionalEncoding,  # noqa: H301
     RelPositionalEncoding,  # noqa: H301
 )
-from espnet.nets.pytorch_backend.transformer.encoder_layer import EncoderLayer
-from espnet.nets.pytorch_backend.transformer.layer_norm import LayerNorm
-from espnet.nets.pytorch_backend.transformer.multi_layer_conv import (
+from SyncVSR.espnet.nets.pytorch_backend.transformer.encoder_layer import EncoderLayer
+from SyncVSR.espnet.nets.pytorch_backend.transformer.layer_norm import LayerNorm
+from SyncVSR.espnet.nets.pytorch_backend.transformer.multi_layer_conv import (
     Conv1dLinear,
     MultiLayeredConv1d,
 )
-from espnet.nets.pytorch_backend.transformer.positionwise_feed_forward import (
+from SyncVSR.espnet.nets.pytorch_backend.transformer.positionwise_feed_forward import (
     PositionwiseFeedForward,  # noqa: H301
 )
-from espnet.nets.pytorch_backend.transformer.raw_embeddings import (
+from SyncVSR.espnet.nets.pytorch_backend.transformer.raw_embeddings import (
     AudioEmbedding,
     VideoEmbedding,
 )
-from espnet.nets.pytorch_backend.transformer.repeat import repeat
-from espnet.nets.pytorch_backend.transformer.subsampling import Conv2dSubsampling
+from SyncVSR.espnet.nets.pytorch_backend.transformer.repeat import repeat
+from SyncVSR.espnet.nets.pytorch_backend.transformer.subsampling import Conv2dSubsampling
 
 
 def _pre_hook(
